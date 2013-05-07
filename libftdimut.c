@@ -1,5 +1,20 @@
 #include "libftdimut.h"
 
+void ftdimut_msleep(unsigned int milliSeconds) {
+  struct timespec reqtime;
+  unsigned int remainder = 0;
+
+  remainder = milliSeconds % MILLISECINSEC;
+  if(remainder == 0) {
+    reqtime.tv_sec = milliSeconds / MILLISECINSEC;
+  } else {
+    reqtime.tv_sec = (milliSeconds - remainder) / MILLISECINSEC;
+  }
+
+  reqtime.tv_nsec = NANOSECINMILLISEC * remainder;
+  nanosleep(&reqtime, NULL);
+}
+
 FT_STATUS ftdimut_setup() {
   FT_STATUS ftStatus; 
   unsigned char timer;
@@ -42,7 +57,7 @@ FT_STATUS ftdimut_init() {
   printf("Break on......\n");
   ftStatus = FT_SetBreakOn(ftHandle);
   if(ftStatus != FT_OK) return ftStatus;
-  usleep(1800 * 1000);
+  ftdimut_msleep(1800);
   printf("Break off......\n");
   ftStatus = FT_SetBreakOff(ftHandle);
   if(ftStatus != FT_OK) return ftStatus;
