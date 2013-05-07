@@ -1,4 +1,5 @@
 test: libftdimut.o test.o
+	mkdir bin
 	gcc libftdimut.o test.o -lftd2xx -o bin/test
 
 test.o: test.c libftdimut.h
