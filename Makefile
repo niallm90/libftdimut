@@ -4,7 +4,7 @@ CFLAGS=-Wall -pedantic
 all: libftdimut.so
 
 libftdimut.so: libftdimut.so.o
-	gcc -shared -Wl,-soname,libftdimut.s0.1 libftdimut.so.o -o bin/libftdimut.so.1.0
+	gcc -shared -Wl,-soname,libftdimut.s0.1 -lftd2xx libftdimut.so.o -o bin/libftdimut.so.1.0
 
 libftdimut.so.o: libftdimut.c libftdimut.h
 	$(CC) $(CFLAGS) -fPIC -c libftdimut.c -o libftdimut.so.o
