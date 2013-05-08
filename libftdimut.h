@@ -9,8 +9,10 @@
 #define MILLISECINSEC 1000
 #define NANOSECINMILLISEC 1000000
 
-FT_HANDLE ftHandle;
+FT_HANDLE ftdimut_ftHandle;
+bool ftdimut_testing = false;
 
+void ftdimut_setTesting(bool value);
 void ftdimut_msleep();
 FT_STATUS ftdimut_setup();
 FT_STATUS ftdimut_init();
