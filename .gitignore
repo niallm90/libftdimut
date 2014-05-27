@@ -1,6 +1,5 @@
 # Object files
 *.o
-bin/*
 
 # Libraries
 *.lib
@@ -16,3 +15,6 @@ bin/*
 *.exe
 *.out
 *.app
+
+# Bin Directory
+bin/*
