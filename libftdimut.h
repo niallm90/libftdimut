@@ -13,7 +13,7 @@ FT_HANDLE ftdimut_ftHandle;
 bool ftdimut_testing = false;
 
 void ftdimut_setTesting(bool value);
-void ftdimut_msleep();
+void ftdimut_msleep(unsigned int milliSeconds);
 FT_STATUS ftdimut_setup();
 FT_STATUS ftdimut_init();
 FT_STATUS ftdimut_close();
