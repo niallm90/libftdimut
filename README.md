@@ -5,9 +5,15 @@ Library implementing Misusbishi MUT-II protocol using an Openport 1.3u cable.
 
 An [example program](https://github.com/niallm90/libftdimut-example/) using this library is also available.
 
+Prerequisits
+------------
+Install the [libftd2xx](http://www.ftdichip.com/Drivers/D2XX.htm) library.
+For Arch Linux there is a package called libftd2xx in the AUR.
+
+Compiling
+---------
+	$make
+
 Installing
 ----------
-Install the libftd2xx package. For Arch Linux this can be found on the AUR.
-
-	$make
-	$make install
+	$sudo make install
