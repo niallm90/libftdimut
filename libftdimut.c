@@ -27,9 +27,9 @@ FT_STATUS ftdimut_setup() {
     return FT_OK;
   }
 
-	ftStatus = FT_SetVIDPID(USB_VID, USB_PID);
+  ftStatus = FT_SetVIDPID(USB_VID, USB_PID);
   if(ftStatus != FT_OK) return ftStatus;
-	ftStatus = FT_Open(0, &ftdimut_ftHandle);
+  ftStatus = FT_Open(0, &ftdimut_ftHandle);
   if(ftStatus != FT_OK) return ftStatus;
   ftStatus = FT_ResetDevice(ftdimut_ftHandle);
   if(ftStatus != FT_OK) return ftStatus;
